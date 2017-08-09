@@ -102,7 +102,7 @@ def inference(x, x_depth, is_training,
 
     # post-net
     x = tf.reduce_mean(x, reduction_indices=[1, 2], name="avg_pool")
-    x_depth = tf.reduce_mean(x_depth, reduction_indices=[1, 2], name="avg_pool")
+    x_depth = tf.reduce_mean(x_depth, reduction_indices=[1, 2], name="avg_pool2")
 
     fuse = tf.concat([x, x_depth], 1)
 

@@ -5,8 +5,10 @@ FLAGS = tf.app.flags.FLAGS
 
 tf.app.flags.DEFINE_string('train_lst', './lists/train_mini_1.lst', 'training list')
 tf.app.flags.DEFINE_string('eval_lst', './lists/eval_mini_1.lst', 'validation list')
-tf.app.flags.DEFINE_string('train_dir', './log/mini_1','Directory where to write event logs and checkpoint.')
-tf.app.flags.DEFINE_string('eval_dir', './log/eval_mini_1', 'save eval')
+
+tf.app.flags.DEFINE_string('train_dir', './log/train/full_rgbd','Directory where to write event logs and checkpoint.')
+tf.app.flags.DEFINE_string('eval_dir', './log/eval/full_rgbd', 'save eval')
+
 tf.app.flags.DEFINE_string('dictionary', './lists/dictionary.lst', 'dictionary')
 tf.app.flags.DEFINE_string('data_dir', '/home/knmac/data/rgbd-dataset-processed-fringe','data dir')
 #tf.app.flags.DEFINE_string('data_dir', '/media/ngocminh/DATA/rgbd-dataset-processed-4dpng','data dir')
@@ -29,3 +31,5 @@ tf.app.flags.DEFINE_integer('min_queue_examples', 20000, 'min after dequeue')
 tf.app.flags.DEFINE_string('pretrained_rgb_model', './model/rgb.npy', "Path of resnet pretrained model")
 tf.app.flags.DEFINE_string('pretrained_depth_model', './model/depth.npy', "Path of resnet pretrained model")
 
+tf.app.flags.DEFINE_string('mean_rgb', './model/rgb_mean_BGR.npy', 'mean color image')
+tf.app.flags.DEFINE_string('mean_dep', './model/dep_mean_BGR.npy', 'mean depth image')
